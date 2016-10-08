@@ -5,7 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * Testing three implementations
+ * Testing four implementations
  */
 public class UniqueDeterminerTest {
 
@@ -15,11 +15,14 @@ public class UniqueDeterminerTest {
 
     private UniqueDeterminer noDataStructureUniqueDeterminer;
 
+    private IndexOfUniqueDeterminer indexOfUniqueDeterminer;
+
     @Before
     public void setUp() throws Exception {
         setUniqueDeterminer = new SetUniqueDeterminer();
         hashUniqueDeterminer = new HashMapUniqueDeterminer();
         noDataStructureUniqueDeterminer = new NoDataStructureUniqueDeterminer();
+        indexOfUniqueDeterminer = new IndexOfUniqueDeterminer();
     }
 
     @Test
@@ -27,6 +30,7 @@ public class UniqueDeterminerTest {
         Assert.assertFalse(setUniqueDeterminer.isUnique("aa"));
         Assert.assertFalse(hashUniqueDeterminer.isUnique("aa"));
         Assert.assertFalse(noDataStructureUniqueDeterminer.isUnique("aa"));
+        Assert.assertFalse(indexOfUniqueDeterminer.isUnique("aa"));
     }
 
     @Test
@@ -34,6 +38,7 @@ public class UniqueDeterminerTest {
         Assert.assertTrue(setUniqueDeterminer.isUnique("ab"));
         Assert.assertTrue(hashUniqueDeterminer.isUnique("ab"));
         Assert.assertTrue(noDataStructureUniqueDeterminer.isUnique("ab"));
+        Assert.assertTrue(indexOfUniqueDeterminer.isUnique("ab"));
     }
 
     @Test
@@ -41,6 +46,7 @@ public class UniqueDeterminerTest {
         Assert.assertTrue(setUniqueDeterminer.isUnique(""));
         Assert.assertTrue(hashUniqueDeterminer.isUnique(""));
         Assert.assertTrue(noDataStructureUniqueDeterminer.isUnique(""));
+        Assert.assertTrue(indexOfUniqueDeterminer.isUnique(""));
     }
 
 }
