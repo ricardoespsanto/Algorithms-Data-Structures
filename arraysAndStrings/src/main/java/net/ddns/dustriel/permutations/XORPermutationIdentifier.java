@@ -16,8 +16,8 @@ class XORPermutationIdentifier implements PermutationIdentifier {
             int charAValue = (int) a.charAt(i);
             int charBValue = (int) b.charAt(i);
 
-            result = result ^ charAValue;
-            result = result ^ charBValue;
+            result ^= charAValue;
+            result ^= charBValue;
         }
 
         return result == 0;
